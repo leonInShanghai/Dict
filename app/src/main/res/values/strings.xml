@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">波波字典</string>
+    <string name="main_et_hint">请输入一个查询汉字...</string>
+    <string name="chengyu_et_hint">请输入一个查询四字成语</string>
+    <string name="main_tv_pinyin">拼音查询</string>
+    <string name="main_tv_bushou">部首查询</string>
+    <string name="main_tv_chengyu">成语查询</string>
+    <string name="main_tv_tuwen">图文识别</string>
+    <string name="main_tv_yiju">每日一句</string>
+    <string name="word_tv_info">文字详情</string>
+    <string name="word_tv_basicjs">基本释义</string>
+    <string name="word_tv_desjs">详情解释</string>
+    <string name="indetify_img">图片识别</string>
+    <string name="chengyu_tv_history">历史记录</string>
+    <string name="chengyu_tv_info">成语详情</string>
+    <string name="main_tv_yiju2">天将降大任于斯人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。</string>
+    <string name="setting_setting">设置</string>
+    <string name="setting_collect">收藏</string>
+    <string name="setting_feedback">反馈</string>
+    <string name="setting_share">分享</string>
+    <string name="setting_good">好评</string>
+    <string name="setting_about">关于我们</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

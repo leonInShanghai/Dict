@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item>
+        <shape android:shape="rectangle" >
+            <solid android:color="@color/grey_f3f3f3"/>
+            <size android:width="1080dp" android:height="2210dp"/>
+        </shape>
+        <!-- <bitmap -->
+        <!-- android:tileMode="disabled" -->
+        <!-- android:scaleType="centerCrop" -->
+        <!-- android:filter="true" -->
+        <!-- android:src="@drawable/launch_bg" /> -->
+    </item>
+
+    <item
+        android:gravity="top|center"
+        android:top="248dp">
+        <bitmap
+            android:dither="true"
+            android:filter="true"
+            android:gravity="top|center"
+            android:src="@drawable/leon_in_shanghai" />
+    </item>
+
+
+</layer-list>

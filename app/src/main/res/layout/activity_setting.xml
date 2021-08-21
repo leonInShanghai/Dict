@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grey_f3f3f3"
+    tools:context=".SettingActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/setting_iv_back"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:onClick="onClick"
+            android:src="@mipmap/ic_back"/>
+
+        <TextView
+            android:id="@+id/searchpy_tv"
+            style="@style/titleTvStyle"
+            android:text="@string/setting_setting"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/setting_tv_collect"
+        style="@style/settingTvStyle"
+        android:layout_marginTop="20dp"
+        android:text="@string/setting_collect"
+        android:drawableLeft="@mipmap/ic_soucang"/>
+
+    <View
+        style="@style/settingLineStyle"/>
+
+    <TextView
+        android:id="@+id/setting_tv_feedback"
+        style="@style/settingTvStyle"
+        android:text="@string/setting_feedback"
+        android:drawableLeft="@mipmap/mine_customer_service"/>
+
+    <View
+        style="@style/settingLineStyle"/>
+
+    <TextView
+        android:id="@+id/setting_tv_good"
+        style="@style/settingTvStyle"
+        android:text="@string/setting_good"
+        android:drawableLeft="@mipmap/mine_evaluate"/>
+
+    <View
+        style="@style/settingLineStyle"/>
+
+    <TextView
+        android:id="@+id/setting_tv_share"
+        style="@style/settingTvStyle"
+        android:text="@string/setting_share"
+        android:drawableLeft="@mipmap/mine_share"/>
+
+    <View
+        style="@style/settingLineStyle"/>
+
+    <TextView
+        android:id="@+id/setting_tv_about"
+        style="@style/settingTvStyle"
+        android:text="@string/setting_about"
+        android:drawableLeft="@mipmap/mine_about_us"/>
+
+    <View
+        style="@style/settingLineStyle"/>
+
+</LinearLayout>
