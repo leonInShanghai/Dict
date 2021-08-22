@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
 
+import com.bobo.lecustomdialog.LEAutoHideDialog;
 import com.example.dict.R;
 import com.example.dict.db.DBManager;
 
@@ -86,8 +87,11 @@ public class SearchChengyuActivity extends BaseActivity {
                 break;
             case R.id.searchcy_iv_search:
                 String text = cyEt.getText().toString();
-                if (TextUtils.isEmpty(text)) {
+                if (TextUtils.isEmpty(text) || text.length() != 4) {
                     // TODO:TIP USER
+                    LEAutoHideDialog dialog = new LEAutoHideDialog(SearchChengyuActivity.this, 0,
+                            "提示", "请输入四字成语!", 0);
+                    dialog.show();
                     return;
                 }
                 // Jump to idiom details page.

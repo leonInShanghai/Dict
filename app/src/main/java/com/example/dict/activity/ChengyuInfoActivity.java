@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 
 import com.bobo.lecustomdialog.LEAlertContentLoadingView;
+import com.bobo.lecustomdialog.LEAutoHideDialog;
 import com.example.dict.R;
 import com.example.dict.bean.ChengyuBean;
 import com.example.dict.db.DBManager;
@@ -116,6 +117,10 @@ public class ChengyuInfoActivity extends BaseActivity {
             showDataToView(cyBean);
         } else {
             // TODO: tosat 无法查询到您输入的成语！请修改后查询。
+            LEAutoHideDialog dialog = new LEAutoHideDialog(ChengyuInfoActivity.this, 0,
+                    "提示", "无法查询到您输入的成语！请修改后查询!", 0);
+            dialog.show();
+            finish();
         }
 
         // 2021-8-21新增加数据加载中loadding...
