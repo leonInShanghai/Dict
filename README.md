@@ -14,6 +14,7 @@
 <div align="center">
 <img src="https://github.com/leonInShanghai/Dict/blob/master/picture/dictionary.gif?raw=true" alt="示例图"/>
 </div>
+<br/>
 
 >鸣谢：
 >> * 写bug的狐狸
