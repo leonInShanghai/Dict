@@ -4,6 +4,7 @@ package com.example.dict.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.dict.R;
 
@@ -52,9 +53,11 @@ public class SettingActivity extends BaseActivity {
                 startActivity(intent);
                 break;
             case R.id.setting_tv_feedback:
+                Toast.makeText(this, "暂未开发", Toast.LENGTH_SHORT).show();
                 mIsFirstClick = false;
                 break;
             case R.id.setting_tv_good:
+                Toast.makeText(this, "暂未开发", Toast.LENGTH_SHORT).show();
                 mIsFirstClick = false;
                 break;
             case R.id.setting_tv_share:
