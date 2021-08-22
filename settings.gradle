@@ -1,3 +1,4 @@
+include ':LECustomDialog'
 include ':ocr_ui'
 include ':refresh_library'
 include ':app',':library'

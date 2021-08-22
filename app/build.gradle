@@ -34,6 +34,7 @@ dependencies {
 
     // 导入本地module
     implementation project(path: ':refresh_library')
+    implementation project(path: ':LECustomDialog')
     // Gson
     implementation 'com.google.code.gson:gson:2.8.6'
     // xUtils 网络请求开源库

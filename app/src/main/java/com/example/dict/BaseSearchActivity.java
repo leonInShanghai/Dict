@@ -10,6 +10,9 @@ import android.widget.ExpandableListView;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+
+import com.bobo.lecustomdialog.LEAlertContentLoadingView;
 import com.example.dict.adapter.SearchLeftAdapter;
 import com.example.dict.adapter.SearchRightAdapter;
 import com.example.dict.bean.PinBuBean;
@@ -71,6 +74,9 @@ public class BaseSearchActivity extends BaseActivity implements ChineseCharacter
     // 网络请求的url 如：https://v.juhe.cn/xhzd/querybs?key=3022583457067131a719f84d10efd275&word=%E5%85%AB
     private String url = "";
 
+    // loading弹窗2021-8-21增加
+    protected AlertDialog mAlterDiaglog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,6 +119,7 @@ public class BaseSearchActivity extends BaseActivity implements ChineseCharacter
                 } else {
                     // 关闭上拉加载更多
                     pullGv.onRefreshComplete();
+                    pullGv.setPullLabel("没有更多数据...");
                 }
             }
         });
@@ -138,11 +145,17 @@ public class BaseSearchActivity extends BaseActivity implements ChineseCharacter
     @Override
     public void onSuccess(String result) {
         super.onSuccess(result);
+        // {"resultcode":"112","reason":"超过每日可允许请求次数!","result":null,"error_code":10012}
         PinBuWordBean bean = new Gson().fromJson(result, PinBuWordBean.class);
         PinBuWordBean.ResultBean resultBean = bean.getResult();
         // 将当前获取数据的总页数进行保存
         totalPage = resultBean.getTotalpage();
         final List<PinBuWordBean.ResultBean.ListBean> list = resultBean.getList();
+
+        // 2021-8-21新增加数据加载中loadding...
+        if (mAlterDiaglog != null && mAlterDiaglog.isShowing()) {
+            mAlterDiaglog.dismiss();
+        }
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -263,7 +276,11 @@ public class BaseSearchActivity extends BaseActivity implements ChineseCharacter
             word = bean.getBushou();
             url = URLUtils.getBushouUrl(word, page, pageSize);
         }
-       loadData(url);
+
+        if (mAlterDiaglog != null) {
+            mAlterDiaglog.show();
+        }
+        loadData(url);
     }
 
     /**
@@ -272,6 +289,18 @@ public class BaseSearchActivity extends BaseActivity implements ChineseCharacter
      * @param type 类型 有拼音0 部首1
      */
     public void initData(String assetsName, int type) {
+
+        // 2021-8-21增加logding弹窗出现
+        if (mAlterDiaglog == null) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.Dialog)
+                    .setCancelable(false)
+                    .setView(new LEAlertContentLoadingView(this));
+            mAlterDiaglog = builder.show();
+        } else {
+            // 已经创建了直接显示
+            mAlterDiaglog.show();
+        }
+
         gropDatas = new ArrayList<>();
         childDatas = new ArrayList<>();
         // Assets文件夹中获取数据

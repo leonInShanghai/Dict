@@ -19,9 +19,11 @@ import com.baidu.ocr.sdk.OnResultListener;
 import com.baidu.ocr.sdk.exception.OCRError;
 import com.baidu.ocr.sdk.model.AccessToken;
 import com.baidu.ocr.ui.camera.CameraActivity;
+import com.bobo.lecustomdialog.LEAutoHideDialog;
 import com.example.dict.bean.TuWenBean;
 import com.example.dict.utils.ChineseCharactersUtils;
 import com.example.dict.utils.FileUtil;
+import com.example.dict.utils.OneSentenceAday;
 import com.example.dict.utils.PatternUtils;
 import com.example.dict.utils.RecognizeService;
 import com.example.dict.utils.StatusBarFontColor;
@@ -92,10 +94,9 @@ public class MainActivity extends AppCompatActivity {
         this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                alertDialog.setTitle(title)
-                        .setMessage(message)
-                        .setPositiveButton("确定", null)
-                        .show();
+                LEAutoHideDialog dialog = new LEAutoHideDialog(MainActivity.this, 0,
+                        "警告", "网络异常!", 0);
+                dialog.show();
             }
         });
     }
@@ -158,6 +159,8 @@ public class MainActivity extends AppCompatActivity {
         twenTv = findViewById(R.id.main_tv_tuwen);
         juziTv = findViewById(R.id.main_tv_juzi);
         ziEt = findViewById(R.id.main_et);
+
+        juziTv.setText(OneSentenceAday.getInstance().getOneSentence());
     }
 
     /**
@@ -186,6 +189,8 @@ public class MainActivity extends AppCompatActivity {
                     intent.setClass(this, WordInfoActivity.class);
                     intent.putExtra("zi", text);
                     startActivity(intent);
+                } else {
+                    mIsFirstClick = false;
                 }
                 break;
 
@@ -206,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.main_tv_tuwen:
                 if (!checkTokenStatus()) {
+                    mIsFirstClick = false;
                     return;
                 }
                 intent.setClass(this, CameraActivity.class);

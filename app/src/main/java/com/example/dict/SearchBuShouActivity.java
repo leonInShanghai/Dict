@@ -44,6 +44,10 @@ public class SearchBuShouActivity extends BaseSearchActivity {
     @Override
     public void onError(Throwable ex, boolean isOnCallback) {
         super.onError(ex, isOnCallback);
+        // 2021-8-21新增加数据加载中loadding...
+        if (mAlterDiaglog != null && mAlterDiaglog.isShowing()) {
+            mAlterDiaglog.dismiss();
+        }
         List<PinBuWordBean.ResultBean.ListBean> list = DBManager.queryBsWordFromPywordtb(word, page, pageSize);
         // 数据的显示
         refreshDataByGv(list);
