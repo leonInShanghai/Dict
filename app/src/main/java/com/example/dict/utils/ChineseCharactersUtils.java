@@ -2,7 +2,7 @@ package com.example.dict.utils;
 
 import android.util.Log;
 
-import com.example.dict.BaseSearchActivity;
+import com.example.dict.activity.BaseSearchActivity;
 import com.example.dict.bean.PinBuWordBean;
 
 import java.util.ArrayList;

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/grey_f3f3f3"
-    tools:context=".activity.IdentifyImgActivity">
+    tools:context=".activity.AboutActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,26 +13,25 @@
         android:background="@color/white">
 
         <ImageView
-            android:id="@+id/iden_iv_back"
+            android:id="@+id/about_iv_back"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@mipmap/ic_back"
             android:layout_marginLeft="10dp"
-            android:onClick="onClick"/>
+            android:onClick="onClick"
+            android:src="@mipmap/ic_back"/>
 
         <TextView
+            android:id="@+id/searchcy_tv"
             style="@style/titleTvStyle"
-            android:text="@string/indetify_img"/>
+            android:text="关于我们"/>
 
     </RelativeLayout>
 
-    <GridView
-        android:id="@+id/iden_gv"
+    <FrameLayout
+        android:id="@+id/fl_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="6"
-        android:padding="10dp"/>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

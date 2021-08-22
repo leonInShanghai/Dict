@@ -1,4 +1,4 @@
-package com.example.dict;
+package com.example.dict.activity;
 
 
 import android.os.Bundle;
@@ -12,26 +12,25 @@ import java.util.List;
 
 /**
  * Created by 公众号：IT波 on 2021/7/18 Copyright © Leon. All rights reserved.
- * Functions: 通过部首查找对应汉字
+ * Functions: 通过拼音查找对应汉字
  */
-public class SearchBuShouActivity extends BaseSearchActivity {
+public class SearchPinyinActivity extends BaseSearchActivity {
 
-    // 获取指定部首对应的网址
+    // 获取指定拼音对应的网址
     private String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        titleTv.setText(R.string.main_tv_bushou);
-        initData(CommonUtils.FILE_BUSHOU, CommonUtils.TYPE_BUSHOU);
-        setExlvListener(CommonUtils.TYPE_BUSHOU);
+        initData(CommonUtils.FILE_PINYIN, CommonUtils.TYPE_PINYIN);
+        setExlvListener(CommonUtils.TYPE_PINYIN);
         exLv.expandGroup(0); // 默认展开第一组
         // 默认进去时获取的第一个是a
-        word = "丨";
-        url = URLUtils.getBushouUrl(word, page, pageSize);
+        word = "a";
+        url = URLUtils.getPinyinUrl(word, page, pageSize);
         // 加载网络数据
         loadData(url);
-        setGVListener(CommonUtils.TYPE_BUSHOU);
+        setGVListener(CommonUtils.TYPE_PINYIN);
     }
 
     /**
@@ -48,7 +47,7 @@ public class SearchBuShouActivity extends BaseSearchActivity {
         if (mAlterDiaglog != null && mAlterDiaglog.isShowing()) {
             mAlterDiaglog.dismiss();
         }
-        List<PinBuWordBean.ResultBean.ListBean> list = DBManager.queryBsWordFromPywordtb(word, page, pageSize);
+        List<PinBuWordBean.ResultBean.ListBean> list = DBManager.queryPyWordFromPywordtb(word, page, pageSize);
         // 数据的显示
         refreshDataByGv(list);
     }

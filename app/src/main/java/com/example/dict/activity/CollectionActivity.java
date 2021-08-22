@@ -1,4 +1,4 @@
-package com.example.dict;
+package com.example.dict.activity;
 
 
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.dict.R;
 import com.example.dict.collect_frag.CollectFragmentAdapter;
 import com.example.dict.collect_frag.ZiFragment;
 import com.google.android.material.tabs.TabLayout;

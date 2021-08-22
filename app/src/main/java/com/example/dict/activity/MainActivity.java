@@ -1,4 +1,4 @@
-package com.example.dict;
+package com.example.dict.activity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,11 +20,10 @@ import com.baidu.ocr.sdk.exception.OCRError;
 import com.baidu.ocr.sdk.model.AccessToken;
 import com.baidu.ocr.ui.camera.CameraActivity;
 import com.bobo.lecustomdialog.LEAutoHideDialog;
+import com.example.dict.R;
 import com.example.dict.bean.TuWenBean;
-import com.example.dict.utils.ChineseCharactersUtils;
 import com.example.dict.utils.FileUtil;
 import com.example.dict.utils.OneSentenceAday;
-import com.example.dict.utils.PatternUtils;
 import com.example.dict.utils.RecognizeService;
 import com.example.dict.utils.StatusBarFontColor;
 import com.google.gson.Gson;

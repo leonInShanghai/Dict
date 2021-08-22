@@ -8,14 +8,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
-import com.example.dict.ChengyuInfoActivity;
+import com.example.dict.activity.ChengyuInfoActivity;
 import com.example.dict.R;
-import com.example.dict.WordInfoActivity;
+import com.example.dict.activity.WordInfoActivity;
 import com.example.dict.db.DBManager;
 
 import java.util.ArrayList;

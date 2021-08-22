@@ -1,4 +1,4 @@
-package com.example.dict;
+package com.example.dict.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.dict.R;
 import com.example.dict.bean.WordBean;
 import com.example.dict.db.DBManager;
 import com.example.dict.utils.URLUtils;

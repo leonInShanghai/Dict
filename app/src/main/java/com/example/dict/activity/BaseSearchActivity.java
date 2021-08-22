@@ -1,4 +1,4 @@
-package com.example.dict;
+package com.example.dict.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 
 import com.bobo.lecustomdialog.LEAlertContentLoadingView;
+import com.example.dict.R;
 import com.example.dict.adapter.SearchLeftAdapter;
 import com.example.dict.adapter.SearchRightAdapter;
 import com.example.dict.bean.PinBuBean;

@@ -1,4 +1,4 @@
-package com.example.dict;
+package com.example.dict.activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 
 import com.bobo.lecustomdialog.LEAlertContentLoadingView;
+import com.example.dict.R;
 import com.example.dict.bean.ChengyuBean;
 import com.example.dict.db.DBManager;
 import com.example.dict.utils.URLUtils;

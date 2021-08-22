@@ -1,4 +1,4 @@
-package com.example.dict;
+package com.example.dict.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.GridView;
 
+import com.example.dict.R;
 import com.example.dict.db.DBManager;
 
 import java.util.ArrayList;

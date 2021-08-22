@@ -1,4 +1,4 @@
-package com.example.dict;
+package com.example.dict.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.example.dict.R;
 import com.example.dict.utils.PatternUtils;
 
 import java.util.ArrayList;

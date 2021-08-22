@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WordInfoActivity"
+    tools:context=".activity.WordInfoActivity"
     android:background="@color/grey_f3f3f3">
 
     <RelativeLayout

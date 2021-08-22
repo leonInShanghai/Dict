@@ -1,9 +1,11 @@
-package com.example.dict;
+package com.example.dict.activity;
 
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.dict.R;
 
 /**
  * Created by 公众号：IT波 on 2021/8/15 Copyright © Leon. All rights reserved.
@@ -43,7 +45,7 @@ public class SettingActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.setting_tv_about:
-                mIsFirstClick = false;
+                startActivity(new Intent(this, AboutActivity.class));
                 break;
             case R.id.setting_tv_collect:
                 Intent intent = new Intent(this, CollectionActivity.class);

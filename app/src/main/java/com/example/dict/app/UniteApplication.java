@@ -1,4 +1,4 @@
-package com.example.dict;
+package com.example.dict.app;
 
 import android.app.Application;
 
