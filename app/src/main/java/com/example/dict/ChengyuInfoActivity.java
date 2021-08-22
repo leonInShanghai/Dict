@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+
+import com.bobo.lecustomdialog.LEAlertContentLoadingView;
 import com.example.dict.bean.ChengyuBean;
 import com.example.dict.db.DBManager;
 import com.example.dict.utils.URLUtils;
@@ -39,6 +42,9 @@ public class ChengyuInfoActivity extends BaseActivity {
     private boolean isCollect = false;
     private boolean isExist = false;
 
+    // loading弹窗2021-8-21增加
+    protected AlertDialog mAlterDiaglog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +58,17 @@ public class ChengyuInfoActivity extends BaseActivity {
         isExist = DBManager.isExistCyuInCollcytb(mChengyu);
         isCollect = isExist;
         setCollectIvStyle();
+
+        // 2021-8-21增加logding弹窗出现
+        if (mAlterDiaglog == null) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.Dialog)
+                    .setCancelable(false)
+                    .setView(new LEAlertContentLoadingView(this));
+            mAlterDiaglog = builder.show();
+        } else {
+            // 已经创建了直接显示
+            mAlterDiaglog.show();
+        }
     }
 
     /**
@@ -99,6 +116,11 @@ public class ChengyuInfoActivity extends BaseActivity {
         } else {
             // TODO: tosat 无法查询到您输入的成语！请修改后查询。
         }
+
+        // 2021-8-21新增加数据加载中loadding...
+        if (mAlterDiaglog != null && mAlterDiaglog.isShowing()) {
+            mAlterDiaglog.dismiss();
+        }
     }
 
     /**
@@ -116,6 +138,11 @@ public class ChengyuInfoActivity extends BaseActivity {
             showDataToView(bean);
         } else {
             // TODO: 2.提示用户连缓存数据都没有
+        }
+
+        // 2021-8-21新增加数据加载中loadding...
+        if (mAlterDiaglog != null && mAlterDiaglog.isShowing()) {
+            mAlterDiaglog.dismiss();
         }
     }
 
@@ -209,6 +236,12 @@ public class ChengyuInfoActivity extends BaseActivity {
             // 原来没有收藏，现在想要收藏, 需要插入数据库表
             DBManager.insertCyuToCollcytb(mChengyu);
         }
+
+        // 2021-8-21新增加数据加载中loadding...
+        if (mAlterDiaglog != null && mAlterDiaglog.isShowing()) {
+            mAlterDiaglog.dismiss();
+        }
+
         super.onDestroy();
     }
 }
