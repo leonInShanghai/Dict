@@ -9,6 +9,10 @@ import android.widget.FrameLayout;
 
 import com.example.dict.R;
 
+/**
+ * Created by 公众号：IT波 on 2021/8/22 Copyright © Leon. All rights reserved.
+ * Functions: 关于我们页面加载的是本地html5
+ */
 public class AboutActivity extends BaseActivity {
 
     private FrameLayout mFrameLayout;
