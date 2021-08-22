@@ -120,7 +120,6 @@ public class ChengyuInfoActivity extends BaseActivity {
             LEAutoHideDialog dialog = new LEAutoHideDialog(ChengyuInfoActivity.this, 0,
                     "提示", "无法查询到您输入的成语！请修改后查询!", 0);
             dialog.show();
-            finish();
         }
 
         // 2021-8-21新增加数据加载中loadding...
